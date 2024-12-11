@@ -1,0 +1,630 @@
+/* Style de base */
+body {
+  margin     : 0;
+  padding    : 0;
+  font-family: "Segoe UI", sans-serif;
+  background : #1e1e2e;
+  color      : white;
+  overflow   : hidden;
+  width      : 100%;
+  height     : 100%;
+  position   : relative;
+}
+
+html,
+body {
+  margin : 0;
+  padding: 0;
+  height : 100%;
+}
+
+
+#logo-center {
+  position : absolute;
+  top      : 50%;
+  left     : 50%;
+  transform: translate(-50%, -50%);
+  width    : 300px;
+  /* Ajustez la taille */
+  height   : auto;
+  /* Maintient le ratio */
+}
+
+/* Desktop Layout */
+#desktop {
+  position       : relative;
+  height         : 100vh;
+  /* Utiliser toute la hauteur de l'écran */
+  display        : flex;
+  flex-direction : column;
+  justify-content: flex-end;
+  overflow       : hidden;
+  /* Empêche tout débordement de l'interface principale */
+}
+
+/* Barre des tâches */
+#taskbar {
+  display        : flex;
+  align-items    : center;  /* Aligne les éléments verticalement au centre */
+  justify-content: center;  /* Centre les éléments horizontalement */
+  background     : #282a36;
+  padding        : 5px;
+  height         : 50px;
+  box-shadow     : 0 -2px 5px rgba(0, 0, 0, 0.5);
+  position       : fixed;
+  width          : 100%;
+  bottom         : 0;
+  left           : 0;
+  z-index        : 9999;
+  transform      : none;
+}
+
+
+
+/* Partie Menu Démarrer et Barre de Recherche */
+#start-and-search {
+  display        : flex;
+  align-items    : center;
+  margin-left    : 10px;
+  justify-content: flex-start;
+}
+
+#start-button {
+  font-size    : 22px;
+  cursor       : pointer;
+  padding      : 5px;
+  border-radius: 4px;
+  transition   : background 0.3s;
+  margin-right : 10px;
+}
+
+#start-button:hover {
+  background: #44475a;
+}
+
+#start-button img {
+  width : 35px;
+  /* Ajuste la taille de l'image */
+  height: auto;
+  /* Conserve les proportions de l'image */
+}
+
+#search-bar {
+  display    : flex;
+  align-items: center;
+  width      : 180px;
+  /* Rétrécir la largeur de la barre de recherche */
+}
+
+#search-bar input {
+  border       : none;
+  padding      : 5px;
+  border-radius: 5px;
+  background   : #44475a;
+  color        : white;
+  outline      : none;
+  width        : 100%;
+}
+
+/* Icônes de la Barre de tâches centrées */
+#task-icons {
+  display        : flex;
+  justify-content: center; /* Centre les icônes horizontalement */
+  align-items    : center; /* Centre les icônes verticalement */
+  gap            : 15px;
+  width          : 100%;
+  height         : 100%;
+  transform      : translateX(-8%); /* Décale de 10% vers la gauche */
+}
+
+
+.icon {
+  font-size : 22px;
+  cursor    : pointer;
+  transition: transform 0.2s, color 0.3s;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+  color    : #6272a4;
+}
+
+#date-time {
+  display       : flex;
+  flex-direction: column;
+  align-items   : center; /* Aligne les éléments à droite */
+  gap           : 5px;
+  padding-right : 10px; /* Décale légèrement à droite */
+  position      : fixed; /* Fixe la position par rapport à l'écran */
+  bottom        : 10px;   /* Ajuste la position à partir du bas */
+  right         : 10px;   /* Place à droite */
+  z-index       : 9999;   /* Assurez-vous que l'élément est au-dessus des autres */
+}
+
+
+#date {
+  font-size  : 14px;
+  font-weight: 400;
+  margin     : 0;/* Retire toute marge éventuelle */
+}
+
+#clock {
+  font-size: 14px;
+  padding  : 0 10px;
+  margin   : 0;
+  /* Retire toute marge éventuelle */
+}
+
+
+
+/* Menu Démarrer */
+.start-menu {
+  position      : absolute;
+  bottom        : 60px;
+  left          : 10px;
+  width         : 400px;
+  background    : rgba(30, 30, 46, 0.9);
+  /* Fond avec transparence */
+  border-radius : 12px;
+  display       : flex;
+  flex-direction: column;
+  box-shadow    : 0 8px 20px rgba(0, 0, 0, 0.5);
+  padding       : 20px;
+  gap           : 15px;
+  color         : white;
+  z-index       : 999;
+  /* Z-index plus élevé pour que le menu démarrer soit au-dessus */
+  transform     : translateY(100%);
+  opacity       : 0;
+  transition    : transform 0.3s, opacity 0.3s;
+}
+
+
+.start-menu.show {
+  transform: translateY(0);
+  opacity  : 1;
+}
+
+#menu-header {
+  text-align   : center;
+  font-size    : 18px;
+  font-weight  : bold;
+  color        : #ffffff;
+  margin-bottom: 10px;
+}
+
+h3 {
+  margin   : 10px 0;
+  font-size: 16px;
+  color    : #ffffff;
+}
+
+#pinned-apps .apps-grid {
+  display              : grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap                  : 15px;
+  justify-items        : center;
+}
+
+
+/* Liste des applications */
+#app-list {
+  padding      : 10px;
+  background   : #44475a;
+  border-radius: 0 0 8px 8px;
+}
+
+.app {
+  display        : flex;
+  flex-direction : column;
+  align-items    : center;
+  justify-content: center;
+  padding        : 10px;
+  background     : #2e2e3e;
+  border-radius  : 8px;
+  transition     : transform 0.3s, background 0.3s;
+  cursor         : pointer;
+  width          : 70px;
+  height         : 70px;
+}
+
+.app i {
+  font-size    : 24px;
+  margin-bottom: 8px;
+  color        : #ffffff;
+}
+
+.app span {
+  font-size : 12px;
+  text-align: center;
+}
+
+.app:hover {
+  transform : scale(1.1);
+  background: #44475a;
+}
+
+#recommendations {
+  background   : #2e2e3e;
+  border-radius: 8px;
+  padding      : 10px;
+}
+
+.recommendation-item {
+  display      : flex;
+  align-items  : center;
+  gap          : 10px;
+  padding      : 8px;
+  background   : #44475a;
+  border-radius: 8px;
+  margin-bottom: 5px;
+  cursor       : pointer;
+}
+
+.recommendation-item:hover {
+  background: #6272a4;
+}
+
+.recommendation-item i {
+  font-size: 18px;
+  color    : white;
+}
+
+.recommendation-item span {
+  font-size: 14px;
+  color    : #ffffff;
+}
+
+#menu-footer {
+  display        : flex;
+  justify-content: space-around;
+  padding-top    : 10px;
+  border-top     : 1px solid #44475a;
+}
+
+.footer-button {
+  display       : flex;
+  flex-direction: column;
+  align-items   : center;
+  cursor        : pointer;
+  transition    : color 0.3s;
+}
+
+.footer-button i {
+  font-size    : 20px;
+  margin-bottom: 5px;
+}
+
+.footer-button:hover {
+  color: #6272a4;
+}
+
+/* Menu contextuel */
+.context-menu {
+  position     : absolute;
+  display      : none;
+  background   : #44475a;
+  color        : white;
+  border-radius: 5px;
+  box-shadow   : 0 4px 10px rgba(0, 0, 0, 0.5);
+  width        : 150px;
+  z-index      : 10;
+}
+
+.context-menu ul {
+  list-style: none;
+  margin    : 0;
+  padding   : 10px;
+}
+
+.context-menu li {
+  padding   : 8px 10px;
+  cursor    : pointer;
+  transition: background 0.3s;
+}
+
+.context-menu li:hover {
+  background: #6272a4;
+}
+
+/* Fenêtre du navigateur */
+.browser-window {
+  position: absolute;
+  top             : 50px;
+  left            : 50px;
+  width           : 800px;
+  height          : calc(100vh - 100px);
+  background-color: #333;
+  border-radius   : 8px;
+  display         : none;
+  flex-direction  : column;
+  box-shadow      : 0 4px 15px rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  overflow        : hidden;
+}
+
+
+
+/* Barre du haut du navigateur */
+.browser-header {
+  display        : flex;
+  align-items    : center;
+  background     : #444;
+  padding        : 10px;
+  border-radius  : 8px 8px 0 0;
+  justify-content: flex-start;
+  /* Aligne les éléments à gauche */
+  position       : relative;
+}
+
+/* Logo - centré à gauche */
+#logo {
+  width       : 30px;
+  /* Ajuste la taille du logo */
+  height      : auto;
+  /* Maintient les proportions du logo */
+  margin-right: 10px;
+  /* Ajoute de l'espace entre le logo et les autres éléments */
+  flex-shrink : 0;
+  /* Empêche le logo de se rétrécir */
+}
+
+/* Barre d'URL centrée */
+.url-bar {
+  display         : flex;
+  align-items     : center;
+  flex-grow       : 1;
+  max-width       : 400px;
+  margin          : 0 auto;
+  border-radius   : 5px;
+  padding         : 5px 10px;
+  background-color: #f1f1f1;
+}
+
+.url-bar i {
+  margin-right: 8px;
+  /* Espacement entre l'icône et le texte */
+  color       : #999;
+  /* Couleur de l'icône */
+}
+
+.url-bar input {
+  border    : none;
+  background: none;
+  outline   : none;
+  color     : #333;
+  font-size : 14px;
+  flex-grow : 1;
+  /* Permet à l'input de prendre tout l'espace restant */
+}
+
+/* Boutons à droite : réduire, maximiser, fermer */
+.window-controls {
+  display  : flex;
+  gap      : 8px;
+  font-size: 16px;
+  color    : white;
+}
+
+.window-controls span {
+  cursor         : pointer;
+  transition     : transform 0.2s;
+  padding        : 5px;
+  border-radius  : 4px;
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+  width          : 24px;
+  height         : 24px;
+  text-align     : center;
+}
+
+.window-controls span:hover {
+  transform : scale(1.2);
+  background: #44475a;
+}
+
+.minimize,
+.maximize,
+.close {
+  font-size: 18px;
+}
+
+.window-controls span:before {
+  font-family: 'Segoe UI', sans-serif;
+  /* Assurez-vous que les icônes sont de la bonne police */
+}
+
+/* Contenu du navigateur */
+.browser-content {
+  padding        : 20px;
+  background     : #222;
+  color          : white;
+  flex-grow      : 1;
+  overflow-y     : auto;
+  max-height     : calc(100vh - 120px);
+  display        : flex;
+  flex-direction : column;
+  align-items    : center;
+  /* Centre horizontalement */
+  justify-content: center;
+  /* Centre verticalement */
+  gap            : 20px;
+}
+
+/* Style des cartes pour chaque menu */
+.menu-item {
+  background   : #333;
+  border-radius: 8px;
+  padding      : 30px;
+  text-align   : center;
+  box-shadow   : 0 4px 10px rgba(0, 0, 0, 0.5);
+  display      : inline-block;
+  width        : 150px;
+  cursor       : pointer;
+  transition   : transform 0.3s, background 0.3s;
+}
+
+.menu-item:hover {
+  transform : scale(1.1);
+  background: #444;
+}
+
+.menu-item i {
+  font-size    : 40px;
+  margin-bottom: 15px;
+}
+
+.menu-item-title {
+  font-size  : 18px;
+  font-weight: bold;
+}
+
+/* Flexbox pour organiser les items en grille */
+.menu-container {
+  display        : flex;
+  flex-wrap      : wrap;
+  gap            : 20px;
+  justify-content: center;
+  /* Centrer les cartes horizontalement */
+  align-items    : center;
+  /* Centrer les cartes verticalement */
+}
+
+/* Pour l'ajout d'espaces entre les éléments */
+.menu-container a {
+  color          : white;
+  text-decoration: none;
+}
+
+.browser-content ul {
+  list-style: none;
+  padding   : 0;
+  margin    : 0;
+  max-height: calc(100% - 40px);
+  /* Empêche le contenu de déborder */
+}
+
+.browser-content li {
+  overflow     : hidden;
+  /* Evite que les éléments ne débordent */
+  text-overflow: ellipsis;
+  /* Ajoute une ellipse si le texte est trop long */
+  white-space  : nowrap;
+  /* Empêche le texte de se casser */
+}
+
+.browser-content a {
+  color          : #6272a4;
+  text-decoration: none;
+  cursor         : pointer;
+}
+
+.browser-content a:hover {
+  text-decoration: underline;
+}
+
+.browser-logo {
+  display        : flex;
+  align-items    : center;
+  justify-content: flex-start;
+  margin-right   : 10px;
+}
+
+.browser-logo img {
+  width        : 40px;
+  /* Taille augmentée */
+  height       : 40px;
+  /* Conserve le ratio carré */
+  object-fit   : contain;
+  /* Garde les proportions de l'image */
+  margin-right : 12px;
+  /* Plus d'espace pour compenser la taille */
+  flex-shrink  : 0;
+  /* Empêche le rétrécissement */
+  border-radius: 6px;
+  /* Coins légèrement arrondis */
+}
+
+@media (max-width: 768px) {
+
+  #start-and-search,
+  #task-icons,
+  #clock {
+      flex-wrap: wrap;
+  }
+
+  .app {
+      width : 50px;
+      height: 50px;
+  }
+
+  #logo-center {
+      width: 200px;
+     
+  }
+}
+/* ------------------------------- Section Projets ------------------------------- */
+.projects {
+  padding: 15px;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 10;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Réduit la taille minimale des cartes */
+  gap: 12px; /* Réduit l'espace entre les cartes */
+}
+
+.project-card {
+  border-radius: 8px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  height: 80px; /* Réduit la hauteur des cartes */
+  width: 80px; /* Réduit la largeur des cartes */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+}
+
+.project-card img {
+  width: 40px; /* Taille de l'image */
+  height: 40px; /* Taille de l'image */
+  object-fit: cover;
+  border-radius: 5px;
+  margin-top: 10px; /* Augmente l'espace en haut pour descendre l'image */
+}
+
+
+.card-content {
+  padding: 0 8px; /* Réduit le padding */
+}
+
+.card-content h3 {
+  font-size: 0.45rem;  /* Réduit encore la taille du texte */
+  color: var(--primary);  /* Définit la couleur du texte avec la variable CSS --primary */
+  font-weight: normal;  /* Définit le poids du texte à "normal", ce qui enlève le gras */
+  margin: 0px 0 4px 0;  /* Supprime la marge du haut et ajoute de l'espace en bas pour remonter le titre */
+  word-wrap: break-word;  /* Permet au texte de se couper et de passer à la ligne suivante si nécessaire */
+  line-height: 1.1;  /* Définit l'espacement entre les lignes de texte */
+  max-width: 80%;  /* Limite la largeur du texte à 80% de la largeur de son conteneur */
+  overflow-wrap: break-word;  /* Force le texte à se couper lorsqu'il dépasse la largeur du conteneur */
+}
+
+
+.view-btn {
+  display: none;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Évite le Curseur - Jeu Rageant</title>
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+    <div id="game">
+        <div id="menu">
+            <h1>Évite le Curseur</h1>
+            <p>Évitez le curseur rouge et survivez le plus longtemps possible !</p>
+            <button id="startBtn">Démarrer</button>
+            
+        </div>
+        <div id="score">Score: 0</div>
+        <div id="level">Niveau: 1</div> <!-- Nouveau niveau -->
+        <div id="cursor"></div>
+        <div id="gameOver">
+            <h2>Game Over!</h2>
+            <p>Score Final : <span id="finalScore"></span></p>
+            <button id="restartBtn">Recommencer</button>
+        </div>
+    </div>
+
+    <script src="./js/game.js"></script>
+</body>
+</html>

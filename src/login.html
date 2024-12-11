@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DragonOS - Connexion</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1e1e2e, #1e1e2e);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        #login-screen {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        #logo {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        #login-form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background: #4caf50;
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #45a049;
+        }
+
+        button:active {
+            background: #3e8e41;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="login-screen">
+        <img src="https://cdn.discordapp.com/attachments/1257558551518384128/1316520700110180463/dragon.png?ex=675b58f2&is=675a0772&hm=602aef3269242b91aed4edd4d630f547afb6b91592928f2f9e58784a6734ff20&" alt="Logo" id="logo">
+        <h1>Bienvenue sur DragonOS</h1>
+        <div id="login-form">
+            <label for="pseudo">Entrez votre nom d'utilisateur :</label>
+            <input type="text" id="pseudo" placeholder="Votre pseudo">
+            <button id="login-button">Se connecter</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('login-button').addEventListener('click', function () {
+            const pseudo = document.getElementById('pseudo').value;
+
+            // Vérifie si un pseudo a été fourni
+            if (pseudo) {
+                fetch('/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ pseudo })
+                })
+                .then(response => {
+                    if (response.ok) {
+                        // Redirection vers le bureau
+                        window.location.href = '/';
+                    } else {
+                        alert('Échec de la connexion');
+                    }
+                })
+                .catch(error => {
+                    console.error('Erreur:', error);
+                    alert('Une erreur est survenue');
+                });
+            } else {
+                alert('Veuillez entrer un pseudo');
+            }
+        });
+    </script>
+</body>
+
+</html>

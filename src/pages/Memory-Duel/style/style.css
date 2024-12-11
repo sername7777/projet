@@ -1,0 +1,220 @@
+/* Style global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 16px;
+    color: #333;
+    overflow: hidden;
+}
+
+/* Container principal */
+.game-container {
+    display: flex;
+    flex-direction: row;
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    width: 85%;
+    max-width: 1000px;
+    box-shadow: 0px 12px 45px rgba(0, 0, 0, 0.15);
+}
+
+/* Menu */
+.menu {
+    background-color: #2980b9;
+    color: #fff;
+    padding: 40px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: inset 0px 0px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 15px 0 0 15px;
+}
+
+h1 {
+    font-size: 2.8em;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.menu-item {
+    margin-bottom: 25px;
+}
+
+label {
+    font-size: 1.3em;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2em;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-top: 5px;
+}
+
+button {
+    background-color: #16a085;
+    color: white;
+    padding: 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.3em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: #1abc9c;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+/* Zone de jeu */
+.game-board-container {
+    flex-grow: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Mini box */
+.game-info-box {
+    background-color: #2980b9;
+    color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1em;
+}
+
+.game-info-box div {
+    font-weight: bold;
+}
+
+.game-info-box span {
+    font-size: 1.2em;
+}
+
+#timer {
+    font-weight: bold;
+}
+
+/* Scoreboard */
+.scoreboard {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.3em;
+    margin-bottom: 25px;
+}
+
+#player, #pairsLeft {
+    font-weight: bold;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    justify-items: center;
+}
+
+.card {
+    background-color: #95a5a6;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 3em;
+    color: transparent;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+    background-color: #7f8c8d;
+    transform: scale(1.05);
+}
+
+.card.revealed {
+    background-color: #fff;
+    color: #2980b9;
+    transform: scale(1.1);
+}
+
+.card:active {
+    transform: scale(0.95);
+}
+
+/* Nouvelle Partie Button */
+.new-game-btn {
+    background-color: #27ae60; /* Green color */
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+    max-width: 200px;
+    margin: 20px auto;
+    display: none;
+}
+
+.new-game-btn:hover {
+    background-color: #2ecc71;
+}
+
+.new-game-btn:active {
+    background-color: #16a085;
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+    .game-container {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .menu {
+        width: 100%;
+        padding: 30px;
+    }
+
+    .game-board {
+        grid-template-columns: repeat(4, 90px);
+    }
+
+    .card {
+        width: 90px;
+        height: 90px;
+        font-size: 2.5em;
+    }
+}

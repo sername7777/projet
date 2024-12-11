@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Page Non Trouvée</title>
+  <link rel="icon" href="/src/assets/dragon.png" type="image/x-icon">
+  <link rel="stylesheet" href="/src/styles/index.css">
+  <link rel="stylesheet" href="/src/styles/404.css"> <!-- Lien vers le fichier CSS 404 -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+</head>
+
+<body>
+  <div id="desktop">
+    <div id="taskbar">
+      <div id="start-and-search">
+        <div id="start-button">
+          <img src="/src/assets/dragon.png" alt="Start Menu" id="start-img">
+        </div>
+
+        <div id="search-bar">
+          <input type="text" placeholder="Rechercher...">
+        </div>
+      </div>
+
+      <div id="task-icons">
+        <div class="icon" id="browser-icon"><i class="fas fa-globe"></i></div>
+        <div class="icon"><i class="fas fa-folder"></i></div>
+        <div class="icon"><i class="fas fa-laptop"></i></div>
+      </div>
+
+      <div id="date-time">
+        <div id="clock">12:00</div>
+        <div id="date"></div>
+      </div>
+    </div>
+
+    <!-- Section 404 -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>404 - Page Non Trouvée</h1>
+        <p>Nous sommes désolés, la page que vous cherchez n'est pas disponible. Peut-être que vous vous êtes perdu, mais
+          ne vous inquiétez pas, vous pouvez revenir à la page d'accueil !</p>
+        <button class="nav-btn" onclick="window.location.href = '/'">Retour à l'Accueil</button>
+      </div>
+    </section>
+
+  </div>
+
+  <div class="browser-content">
+    <div class="menu-container">
+      <div class="menu-item" onclick="loadFakePage('Drive')">
+        <i class="fas fa-cloud"></i>
+        <div class="menu-item-title">Project</div>
+      </div>
+      <div class="menu-item" onclick="loadFakePage('Contact')">
+        <i class="fas fa-address-book"></i>
+        <div class="menu-item-title">Contact</div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+
+  <script src="/src/js/script.js"></script>
+  <script src="/src/js/windows.js"></script>
+</body>
+
+</html>

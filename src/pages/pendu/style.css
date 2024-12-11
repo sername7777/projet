@@ -1,0 +1,154 @@
+/* Global Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #095385, #323438);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #2c3e50;
+}
+
+/* Game Container */
+.game-container {
+  background: #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  padding: 30px;
+  width: 800px;
+  display: flex;
+  gap: 30px;
+}
+
+/* Left Panel */
+.left-panel {
+  flex: 1;
+  text-align: center;
+}
+
+/* Right Panel */
+.right-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+
+/* Title */
+h1 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Word Display */
+#word {
+  font-size: 28px;
+  letter-spacing: 10px;
+  margin: 20px 0;
+  color: #2c3e50;
+  font-weight: bold;
+}
+
+/* Message */
+#message {
+  font-size: 18px;
+  color: #e74c3c;
+  margin: 10px 0;
+  height: 20px;
+  transition: color 0.3s ease, transform 0.5s ease;
+}
+
+#message.win {
+  transform: scale(1.2);
+  color: #27ae60;
+  font-weight: bold;
+}
+
+/* Letters Container */
+.letters-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+}
+
+#letters button {
+  padding: 14px;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  background: #3498db;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#letters button:hover {
+  background: #2980b9;
+}
+
+#letters button:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+  color: #fff;
+}
+
+/* Reset Button */
+#reset {
+  display: none;
+  margin-top: 25px;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  background: #27ae60;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#reset:hover {
+  background: #219150;
+}
+
+/* Errors Container */
+#error-container {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#errors {
+  font-weight: bold;
+  color: #e74c3c;
+}
+
+/* Message Container */
+#messageContainer {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Canvas */
+canvas {
+  background-color: #f9f9f9;
+  border: 3px solid #ccc;
+  border-radius: 8px;
+  z-index: 0;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jeu du Pendu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <link rel="icon" href="./assets/pendu.png">
+</head>
+<body>
+  <div class="game-container">
+    <div class="left-panel">
+      <h1>Jeu du Pendu</h1>
+      <p id="word">_ _ _ _ _</p>
+      
+      <!-- Message Container ajouté ici -->
+      <div id="messageContainer">
+        <p id="message"></p>
+      </div>
+      
+      <div id="letters" class="letters-container"></div>
+      <button id="reset">Réinitialiser</button>
+    </div>
+    <div class="right-panel">
+      <!-- Erreurs Container placé ici -->
+      <div id="errors-container">
+        <p>Erreurs : <span id="errors">0</span> / 8</p>
+      </div>
+      <canvas id="hangman" width="350" height="400"></canvas>
+    </div>
+  </div>
+  
+  <script src="./script.js"></script>
+</body>
+</html>

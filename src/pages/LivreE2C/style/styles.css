@@ -1,0 +1,226 @@
+/* General Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #F4F4F9;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  padding-top: 70px;
+  margin: 0;
+}
+
+/* Header */
+#header {
+  background: linear-gradient(135deg, #4a4e69, #22223b);
+  color: #f2e9e4;
+  padding: 30px 20px 10px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  padding-top: 30px;
+}
+
+/* Logo */
+#logo {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 100px;
+  width: auto;
+}
+
+/* Header Content */
+#header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Navbar */
+#navbar {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding-top: 10px;
+  width: 100%;
+}
+
+/* Navbar Buttons */
+#navbar .button {
+  color: #f2e9e4;
+  text-decoration: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  background-color: #4a4e69;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-weight: 500;
+  min-width: 120px;
+  text-align: center;
+}
+
+#navbar .button:hover {
+  background-color: #22223b;
+  color: #f2e9e4;
+  transform: scale(1.1);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Title and Subtitle */
+#header h1, #header h4 {
+  text-align: center;
+  margin: 0;
+}
+
+#header h1 {
+  font-size: 1.8em;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+#header h4 {
+  font-size: 1.1em;
+  color: #909197;
+  font-weight: 300;
+}
+
+/* Main Content */
+#main-content {
+  background-color: #fff;
+  background-image: url("../assets/fond.png");
+  background-size: cover;
+  background-position: center;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3); /* Darker shadow */
+  width: 100%;
+  max-width: 900px;
+  margin-top: 120px;
+  padding-top: 40px;
+  background-attachment: fixed;
+  /* Removed border */
+}
+
+#main-content p {
+  margin-bottom: 15px;
+  line-height: 1.8;
+  color: #555;
+}
+
+/* Additional Content */
+#additional-content {
+  background-color: #f9f9f9;
+  background-image: url("../assets/");
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3); /* Darker shadow */
+  width: 100%;
+  max-width: 900px;
+  margin-top: 40px;
+  padding-top: 30px;
+  background-attachment: fixed;
+  /* Removed border */
+}
+
+#additional-content p {
+  margin-bottom: 15px;
+  line-height: 1.8;
+  color: #555;
+}
+
+#additional-benefits-list {
+  margin-top: 15px;
+}
+
+#additional-benefits-list li {
+  margin-bottom: 10px;
+}
+
+#benefits-list {
+  margin-top: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+#benefits-list li {
+  margin-bottom: 10px;
+}
+
+/* Image Section */
+#image {
+  display: flex;
+  background-image: url("../assets/library.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 50vh;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  opacity: 0.9;
+  position: relative;
+}
+
+#image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+#image h2 {
+  z-index: 1;
+  font-size: 3rem;
+  color: #fff;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  max-width: 80%;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  #header h1 {
+    font-size: 1.5em;
+  }
+
+  #header h4 {
+    font-size: 1em;
+  }
+
+  #main-content, #additional-content {
+    padding: 15px;
+  }
+
+  #navbar {
+    gap: 10px;
+  }
+
+  #image h2 {
+    font-size: 2rem;
+    padding-top: 10vh;
+  }
+}

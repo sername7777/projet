@@ -1,0 +1,40 @@
+/* 404.css */
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Prend toute la hauteur de l'écran */
+    text-align: center; /* Centre le texte horizontalement */
+}
+
+.hero-content {
+    max-width: 600px; /* Limite la largeur du contenu */
+    padding: 20px;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #ff6347; /* Nouvelle couleur pour le titre (Tomato) */
+}
+
+p {
+    font-size: 1.25rem;
+    color: #ffffff; /* Nouvelle couleur pour le texte (Gris foncé) */
+    margin: 20px 0;
+}
+
+.nav-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.nav-btn:hover {
+    background-color: #0056b3;
+}
